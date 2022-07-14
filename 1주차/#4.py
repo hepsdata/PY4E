@@ -5,8 +5,8 @@ while (j<1): # while loop
         age = int(input("당신은 몇 살 입니까? : ")) # input age
 
         j += 1
-        i= 0
-
+        i = 0
+        
         while (i<1): # while loop
             try:
                 birth_date = []
@@ -23,20 +23,21 @@ while (j<1): # while loop
                 if (all([i>0 for i in birth_date]) and all([i>0 for i in today_date])) == True:
                     if (birth_date[0] > 13 or today_date[0] >13 ) or (birth_date[1] > 31 or today_date[1] > 31) :
                         print('잘못된 날짜입니다.\n')
-                        i-=1 # while loop 반복
+                        i-=1 # while loop 반복 (날짜 재입력)
                     else :
-                        i+=1 # while loop 종료
+                        i+=1 # while loop 종료 (날짜 재입력)
                 else:
                     print('음수를 잘못 입력하셨습니다.\n')
-                    i-=1 # while loop 반복
+                    i-=1 # while loop 반복 (날짜 재입력)
 
             except :
                 print('잘못 입력하셨습니다.\n')
-                i-=1 # while loop 반복
+                i-=1 # while loop 반복 (날짜 재입력)
 
         if birth_date <= today_date: # 생일이 지났을 때
             #(birth_date[0] > today_date[0]) or ((birth_date[0] == today_date[0]) and (birth_date[1] < today_date[1])):
             factor = 0 # 그대로
+        
         else: # 생일이 지나지 않았을 때
             factor = -1 # -1을 뺀다
 
@@ -44,4 +45,4 @@ while (j<1): # while loop
 
     except :
         print('나이를 잘못 입력하셨습니다.\n')
-        j-=1
+        j-=1 # while loop 반복 (나이 재입력)

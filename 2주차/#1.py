@@ -23,10 +23,7 @@ def rcpWinner(deci) :
         else :
             print('You entered the wrong input. choose between "가위","바위","보"')
             #강제종료
-            exit()
-          
-    
-    
+            exit()     
     
     # 결과 출력용 변수 설정 : 0 - 가위, 1 - 바위, 2 - 보
     strCom, strMy = ""
@@ -44,7 +41,7 @@ def rcpWinner(deci) :
     elif my == 2 : 
         strMy = "보"
     
-  # 가위바위보 승리자 판단로직(숫자가 같음 = 비김, 다름 = 승패갈림)
+    # 가위바위보 승리자 판단로직(숫자가 같음 = 비김, 다름 = 승패갈림)
     #승패결과를 담는 변수(문자열)
     strWinner = ''
 

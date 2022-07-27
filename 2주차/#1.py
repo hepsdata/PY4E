@@ -26,20 +26,9 @@ def rcpWinner(deci) :
             exit()     
     
     # 결과 출력용 변수 설정 : 0 - 가위, 1 - 바위, 2 - 보
-    strCom, strMy = ""
-    if com == 0 :
-        strCom = "가위"
-    elif com == 1 : 
-        strCom = "바위"
-    elif com == 2 : 
-        strCom = "보"
-        
-    if my == 0 :
-        strMy = "가위"
-    elif my == 1 : 
-        strMy = "바위"
-    elif my == 2 : 
-        strMy = "보"
+    strCom, strMy = '', ''
+    strCom = convertNumToRcp(com)
+    strMy = convertNumToRcp(my)
     
     # 가위바위보 승리자 판단로직(숫자가 같음 = 비김, 다름 = 승패갈림)
     #승패결과를 담는 변수(문자열)
@@ -48,40 +37,29 @@ def rcpWinner(deci) :
     # 같은 입력을 내면 비김
     if com == my : 
       strWinner = 'DRAW~~~~~~~~'
-    # 컴퓨터의 입력을 기준으로 승패 판단
+    # 승패경우 판단
     else : 
-      # 컴퓨터 = 가위
-      if com == 0 : 
-        # 사용자 = 바위
-        if my == 1 :
+      if (com == 0 and my == 1) or (com == 1 and my == 2) or (com == 2 and my == 0): 
           strWinner = 'Winner is YOU:-)'                  
-        # 사용자 = 보
-        elif my == 2 :
+      else:
           strWinner = 'Winner is Computer:-('
-          
-      # 컴퓨터 = 바위
-      elif com == 1 :
-        # 사용자 = 가위
-        if my == 0 :
-          strWinner = 'Winner is Computer:-('
-        # 사용자 = 보
-        elif my == 2 :
-          strWinner = 'Winner is YOU:-)'                  
-  
-      #컴퓨터 = 보
-      else :
-        # 사용자 = 가위
-        if my == 0 :
-          strWinner = 'Winner is YOU:-)'                  
-        # 사용자 = 바위
-        elif my == 1 :
-          strWinner = 'Winner is Computer:-('
+
 
     # 출력
     print("나: "+strMy)
     print("컴퓨터: "+strCom)
     print("결과: "+strWinner)
 
+# convertNumToRcp(num) : 숫자 인자를 받아 문자(가위,바위,보)로 변환시키는 함수
+def convertNumToRcp(num):
+    rcp = ''
+    if num == 0 :
+        rcp = '가위'
+    elif num == 1 : 
+        rcp = '바위'
+    elif num == 2 : 
+        rcp = '보'
+    return rcp
 
 #실행
 rcpWinner(input('What''s your choice rock,cissor or paper???'))

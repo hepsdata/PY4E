@@ -1,10 +1,10 @@
 #month calculation function
-def month_calculation():
+def month_calculation(f_month):
     
     if f_month in [4,6,9,11] :
         end_of_day = 30
     elif f_month == 2 :
-        end_of_day = 2
+        end_of_day = 28
     else :
         end_of_day = 31
         
@@ -12,7 +12,7 @@ def month_calculation():
 
 
 #days_of_week calculation function
-def days_of_week_calculation(days_of_week):
+def days_of_week_calculation(days_of_week,n):
 
     weekdays = ['일','월','화','수','목','금','토']
 
@@ -34,14 +34,14 @@ def after_100(month:int, day:int, days_of_week:str) :
     f_month = month
     f_day = day
 
-    f_days_of_week = days_of_week_calculation(days_of_week)
+    f_days_of_week = days_of_week_calculation(days_of_week,n)
 
     #n-1 : 오늘 포함
     for i in range(n-1):
         
         f_day += 1
         
-        end_of_day = month_calculation()
+        end_of_day = month_calculation(f_month)
         
         if end_of_day < f_day :
             f_day = 1

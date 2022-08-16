@@ -11,8 +11,6 @@ a = [3,2,4,2,5,2,4,3,1,2]
 
 def grader(s,a):
     
-    
-    sum_score = 0
 
     #이름과 답안지 나누기
     for i in range(0,len(s)):

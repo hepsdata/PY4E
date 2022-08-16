@@ -47,7 +47,7 @@ def grader(s,a):
         rank += 1
         for f in range(0,len(s)):
             if s[f][2] == score[r]:
-                print("학생 :",s[f][0],", 점수 :",score[r],"점, ",rank,"등")
+                print(f"학생: {s[f][0]},", f"점수: {score[r]}점,", f"{rank}등")
                 
                 
 grader(s,a)
